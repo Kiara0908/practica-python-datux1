@@ -27,7 +27,7 @@ def menu():
 
         elif opcion == "3":
             id_bus = input("Ingrese ID del bus: ")
-            horario = input("Ingrese el horario (ej. 09:00-11:00): ")
+            horario = input("Ingrese el horario: ")
             admin.registrar_horario_a_bus(id_bus, horario)
 
         elif opcion == "4":
@@ -37,13 +37,13 @@ def menu():
 
         elif opcion == "5":
             id_conductor = input("Ingrese ID del conductor: ")
-            horario = input("Ingrese el horario (ej. 09:00-11:00): ")
+            horario = input("Ingrese el horario: ")
             admin.agregar_horario_a_conductor(id_conductor, horario)
 
         elif opcion == "6":
             id_bus = input("Ingrese ID del bus: ")
             id_conductor = input("Ingrese ID del conductor: ")
-            horario = input("Ingrese el horario (ej. 09:00-11:00): ")
+            horario = input("Ingrese el horario: ")
             admin.asignar_bus_a_conductor(id_bus, id_conductor, horario)
 
         elif opcion == "7":
