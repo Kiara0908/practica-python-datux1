@@ -13,3 +13,4 @@ class App:
                 ]
         self.bd:Database=Database(path)        
         self.mail=Mail(stmp_server,port,user,password)
+    

@@ -117,4 +117,10 @@ def insertManyVentas(bd:Database,data):
     bd.insert_many('VENTAS',['order_id','postal_code','product_id','sales_amount','quantity','discount','profit','shipping_cost','order_priority'],data)
 
 
-    
+def obtener_lista_tuplas(): ##Lista de tuplas simplificado
+    lista_tuplas = [
+        (1, 'Producto A', 100),
+        (2, 'Producto B', 200),
+        (3, 'Producto C', 150)
+    ]
+    return lista_tuplas

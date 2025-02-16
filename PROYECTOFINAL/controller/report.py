@@ -30,7 +30,7 @@ def sendMail(app:App,data):
     # cambiar el asunto 
     app.mail.send_email('from@example.com','Reporte','Reporte',data)
 
-# crear un reporte diferente aquí añado otro        
+# crear un reporte diferente, aquí añado otro        
 def GenerateReportDiscount(app: App):
     conn = app.bd.getConection()
     query = """
