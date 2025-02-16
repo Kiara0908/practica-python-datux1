@@ -29,7 +29,8 @@ def GenerateReportVentas(app:App):
 def sendMail(app:App,data):
     # cambiar el asunto 
     app.mail.send_email('from@example.com','Reporte','Reporte',data)
-        
+
+# crear un reporte diferente aquí añado otro        
 def GenerateReportDiscount(app: App):
     conn = app.bd.getConection()
     query = """
@@ -49,5 +50,6 @@ def GenerateReportDiscount(app: App):
     df.to_csv(path)
     sendMailDiscount(app, path)
 
+    # cambié el asunto 
 def sendMailDiscount(app: App, data):
     app.mail.send_email('from@example.com', 'Descuentos', 'Reporte de descuentos', data)
