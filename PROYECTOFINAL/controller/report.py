@@ -29,3 +29,25 @@ def GenerateReportVentas(app:App):
 def sendMail(app:App,data):
     # cambiar el asunto 
     app.mail.send_email('from@example.com','Reporte','Reporte',data)
+        
+def GenerateReportDiscount(app: App):
+    conn = app.bd.getConection()
+    query = """
+        SELECT 
+            v.product_id,
+            AVG(v.discount) AS promedio_descuento
+        FROM 
+            VENTAS v
+        GROUP BY 
+            v.product_id
+        ORDER BY 
+            promedio_descuento DESC;
+    """
+    df = pd.read_sql_query(query, conn)
+    fecha = "08-02"
+    path = f"/workspaces/workspacepy0125v2/proyecto/files/discount-{fecha}.csv"
+    df.to_csv(path)
+    sendMailDiscount(app, path)
+
+def sendMailDiscount(app: App, data):
+    app.mail.send_email('from@example.com', 'Descuentos', 'Reporte de descuentos', data)
